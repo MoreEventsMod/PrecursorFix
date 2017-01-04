@@ -2605,7 +2605,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = first_league_discovered
+		set_global_flag = first_league_system_discovered
 		set_country_flag = first_league_system
 		random_system = {
 			limit = { has_star_flag = precursor_3 }
@@ -3505,7 +3505,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = irassia_discovered
+		set_global_flag = irassian_system_discovered
 		set_country_flag = irassian_system
 		random_system = {
 			limit = { has_star_flag = precursor_4 }
@@ -4393,7 +4393,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = cybrex_discovered
+		set_global_flag = cybrex_system_discovered
 		set_country_flag = cybrex_system
 		random_system = {
 			limit = { has_star_flag = precursor_5 }
