@@ -852,29 +852,40 @@ ship_event = {
 	
 	trigger = {
 		from = { has_planet_flag = vultaum_homeworld }
-		owner = { is_ai = no }
-		NOT = {
-			has_global_flag = vultaum_homeworld_found
+		owner = { 
+			is_ai = no 
+			OR = {
+				has_event_chain = vultaum_chain
+				has_event_chain = vultaum_homeworld_chain
+			}
 		}
+#		NOT = {
+#			has_global_flag = vultaum_homeworld_found
+#		}
 	}
 
 	immediate = {
-		set_global_flag = vultaum_world_found
+#		set_global_flag = vultaum_world_found
 		owner = {
 			set_country_flag = vultaum_world_found
 			if = {
 				limit = { has_event_chain = vultaum_chain }
-				end_event_chain = "vultaum_chain"
+				set_country_flag = vultaum_end1
 			}
 			if = {
 				limit = { has_event_chain = "vultaum_homeworld_chain" }
-				end_event_chain = "vultaum_homeworld_chain"
+				set_country_flag = vultaum_end2
 			}
 		}
 	}
 	
 	option = {
 		name = "FASCINATING"
+		trigger = {
+			owner = {
+				has_country_flag = vultaum_end1
+			}
+		}
 		owner = {
 			add_monthly_resource_mult = {
 				resource = physics_research
@@ -894,26 +905,57 @@ ship_event = {
 				min = @tier3researchmin
 				max = @tier3researchmax
 			}
+			end_event_chain = "vultaum_chain"
+		}
+	}
+	
+	option = {
+		name = "FASCINATING"
+		trigger = {
+			owner = {
+				has_country_flag = vultaum_end2
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			end_event_chain = "vultaum_homeworld_chain"
 		}
 	}
 }
 
-# Someone else got there first
+# Someone else got there first Will only show up for those without the quest
 ship_event = {
 	id = precursor.102
 	title = "precursor.102.name"
 	
-	desc = {
-		text = precursor.102.desc.a
-		trigger = {
-			owner = {
-				OR = { 
-					has_event_chain = vultaum_chain
-					has_event_chain = vultaum_homeworld_chain
-				}
-			}
-		}
-	}
+#	desc = { Not used anymore
+#		text = precursor.102.desc.a
+#		trigger = {
+#			owner = {
+#				OR = { 
+#					has_event_chain = vultaum_chain
+#					has_event_chain = vultaum_homeworld_chain
+#				}
+#			}
+#		}
+#	}
 	desc = {
 		text = precursor.102.desc.b
 		trigger = {
@@ -932,21 +974,27 @@ ship_event = {
 	
 	trigger = {
 		from = { has_planet_flag = vultaum_homeworld }
-		owner = { is_ai = no }
-		has_global_flag = vultaum_homeworld_found
+		owner = {
+			is_ai = no
+			NOT = {
+				has_event_chain = vultaum_chain
+				has_event_chain = vultaum_homeworld_chain
+			}
+		}
+#		has_global_flag = vultaum_homeworld_found
 	}
 	
 	immediate = {
 		owner = {
 			set_country_flag = vultaum_world_found
-			if = {
-				limit = { has_event_chain = vultaum_chain }
-				end_event_chain = "vultaum_chain"
-			}
-			if = {
-				limit = { has_event_chain = vultaum_homeworld_chain }
-				end_event_chain = "vultaum_homeworld_chain"
-			}
+#			if = {
+#				limit = { has_event_chain = vultaum_chain }
+#				end_event_chain = "vultaum_chain"
+#			}
+#			if = {
+#				limit = { has_event_chain = vultaum_homeworld_chain }
+#				end_event_chain = "vultaum_homeworld_chain"
+#			}
 		}
 	}		
 	
@@ -1626,22 +1674,40 @@ ship_event = {
 	
 	trigger = {
 		from = { has_planet_flag = yuht_homeworld }
-		owner = { is_ai = no }
-		NOT = {
-			has_global_flag = yuht_homeworld_found
+		owner = { 
+			is_ai = no
+			OR = {
+				has_event_chain = yuht_chain
+				has_event_chain = yuht_homeworld_chain
+			}
 		}
+#		NOT = {
+#			has_global_flag = yuht_homeworld_found
+#		}
 	}
 	
 	immediate = {
 		set_global_flag = yuht_homeworld_found
 		owner = {
 			set_country_flag = yuht_world_found
-			end_event_chain = "yuht_homeworld_chain"
+			if = {
+				limit = { has_event_chain = yuht_chain }
+				set_country_flag = yuht_end1
+			}
+			if = {
+				limit = { has_event_chain = yuht_homeworld_chain }
+				set_country_flag = yuht_end2
+			}
 		}
 	}
 	
 	option = {
 		name = "FASCINATING"
+		trigger = {
+			owner = {
+				has_country_flag = yuht_end1
+			}
+		}
 		owner = {
 			add_monthly_resource_mult = {
 				resource = energy
@@ -1655,26 +1721,51 @@ ship_event = {
 				min = @tier4materialmin
 				max = @tier4materialmax
 			}
+			end_event_chain = "yuht_chain"
+		}
+	}
+	
+	option = {
+		name = "FASCINATING"
+		trigger = {
+			owner = {
+				has_country_flag = yuht_end2
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier4materialreward
+				min = @tier4materialmin
+				max = @tier4materialmax
+			}
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = @tier4materialreward
+				min = @tier4materialmin
+				max = @tier4materialmax
+			}
+			end_event_chain = "yuht_homeworld_chain"
 		}
 	}
 }
 
-# Someone else got there first
+# Someone else got there first Will only show up for those without the quest
 ship_event = {
 	id = precursor.602
 	title = "precursor.602.name"
 	
-	desc = {
-		text = precursor.602.desc.a
-		trigger = {
-			owner = {
-				OR = { 
-					has_event_chain = yuht_chain
-					has_event_chain = yuht_homeworld_chain
-				}
-			}
-		}
-	}
+#	desc = { Not used anymore
+#		text = precursor.602.desc.a
+#		trigger = {
+#			owner = {
+#				OR = { 
+#					has_event_chain = yuht_chain
+#					has_event_chain = yuht_homeworld_chain
+#				}
+#			}
+#		}
+#	}
 	desc = {
 		text = precursor.602.desc.b
 		trigger = {
@@ -1693,21 +1784,27 @@ ship_event = {
 	
 	trigger = {
 		from = { has_planet_flag = yuht_homeworld }
-		owner = { is_ai = no }
-		has_global_flag = yuht_homeworld_found
+		owner = { 
+			is_ai = no 
+			NOT = {
+				has_event_chain = yuht_chain
+				has_event_chain = yuht_homeworld_chain
+			}
+		}
+#		has_global_flag = yuht_homeworld_found
 	}
 	
 	immediate = {
 		owner = {
 			set_country_flag = yuht_world_found
-			if = {
-				limit = { has_event_chain = yuht_chain }
-				end_event_chain = "yuht_chain"
-			}
-			if = {
-				limit = { has_event_chain = yuht_homeworld_chain }
-				end_event_chain = "yuht_homeworld_chain"
-			}
+#			if = {
+#				limit = { has_event_chain = yuht_chain }
+#				end_event_chain = "yuht_chain"
+#			}
+#			if = {
+#				limit = { has_event_chain = yuht_homeworld_chain }
+#				end_event_chain = "yuht_homeworld_chain"
+#			}
 		}
 	}		
 	
@@ -2676,20 +2773,39 @@ ship_event = {
 	
 	trigger = {
 		from = { has_planet_flag = first_league_homeworld }
-		owner = { is_ai = no }
-		NOT = {
-			has_global_flag = first_league_homeworld_found
+#		NOT = {
+#			has_global_flag = first_league_homeworld_found
+#		}
+		owner = {
+			OR = {
+				has_event_chain = first_league_chain
+				has_event_chain = first_league_homeworld_chain
+			}
 		}
 	}
 
 	immediate = {
-		set_global_flag = first_league_homeworld_found
+#		set_global_flag = first_league_homeworld_found
 		owner = {
 			set_country_flag = league_world_found
+			if = {
+				limit = { has_event_chain = first_league_chain }
+				set_country_flag = first_league_end1
+			}
+			if = {
+				limit = { has_event_chain = first_league_homeworld_chain }
+				set_country_flag = first_league_end2
+			}
 		}
 	}
 
-	after = {
+	option = {
+		name = "FASCINATING"
+		trigger = {
+			owner = {
+				has_country_flag = first_league_end2
+			}
+		}
 		owner = {
 			add_monthly_resource_mult = {
 				resource = society_research
@@ -2703,18 +2819,7 @@ ship_event = {
 				min = @tier4influencemin
 				max = @tier4influencemax
 			}
-		}
-	}
-	
-	option = {
-		name = "FASCINATING"
-		trigger = {
-			owner = {
-				has_event_chain = "first_league_homeworld_chain"
-			}
-		}
-		owner = {
-			end_event_chain = "first_league_homeworld_chain"
+			end_event_chain = "first_league_chain"
 		}
 	}
 
@@ -2722,30 +2827,43 @@ ship_event = {
 		name = "FASCINATING"
 		trigger = {
 			owner = {
-				NOT = {
-					has_event_chain = "first_league_homeworld_chain"
-				}
+				has_country_flag = first_league_end2
 			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier4influencereward
+				min = @tier4influencemin
+				max = @tier4influencemax
+			}
+			end_event_chain = "first_league_homeworld_chain"
 		}
 	}
 }
 
-# Someone else got there first
+# Someone else got there first Will only show up for those without the quest
 ship_event = {
 	id = precursor.1102
 	title = "precursor.1102.name"
 	
-	desc = {
-		text = precursor.1102.desc.a
-		trigger = {
-			owner = {
-				OR = { 
-					has_event_chain = first_league_chain
-					has_event_chain = first_league_homeworld_chain
-				}
-			}
-		}
-	}
+#	desc = { Not used anymore
+#		text = precursor.1102.desc.a
+#		trigger = {
+#			owner = {
+#				OR = { 
+#					has_event_chain = first_league_chain
+#					has_event_chain = first_league_homeworld_chain
+#				}
+#			}
+#		}
+#	}
 	desc = {
 		text = precursor.1102.desc.b
 		trigger = {
@@ -2764,21 +2882,27 @@ ship_event = {
 	
 	trigger = {
 		from = { has_planet_flag = first_league_homeworld }
-		owner = { is_ai = no }
-		has_global_flag = first_league_homeworld_found
+		owner = {
+			is_ai = no
+			NOT = {
+				has_event_chain = first_league_chain
+				has_event_chain = first_league_homeworld_chain
+			}
+		}
+#		has_global_flag = first_league_homeworld_found
 	}
 	
 	immediate = {
 		owner = {
 			set_country_flag = league_world_found
-			if = {
-				limit = { has_event_chain = first_league_chain }
-				end_event_chain = "first_league_chain"
-			}
-			if = {
-				limit = { has_event_chain = first_league_homeworld_chain }
-				end_event_chain = "first_league_homeworld_chain"
-			}
+#			if = {
+#				limit = { has_event_chain = first_league_chain }
+#				end_event_chain = "first_league_chain"
+#			}
+#			if = {
+#				limit = { has_event_chain = first_league_homeworld_chain }
+#				end_event_chain = "first_league_homeworld_chain"
+#			}
 		}
 	}		
 	
@@ -3578,29 +3702,39 @@ ship_event = {
 	
 	trigger = {
 		from = { has_planet_flag = irassian_homeworld }
-		owner = { is_ai = no }
-		NOT = {
-			has_global_flag = irassian_homeworld_found
+#		NOT = {
+#			has_global_flag = irassian_homeworld_found
+#		}
+		owner = {
+			OR = {
+				has_event_chain = irassian_chain
+				has_event_chain = irassian_homeworld_chain
+			}
 		}
 	}
 
 	immediate = {
-		set_global_flag = irassian_homeworld_found
+#		set_global_flag = irassian_homeworld_found
 		owner = {
 			set_country_flag = irassian_world_found
 			if = {
 				limit = { has_event_chain = irassian_chain }
-				end_event_chain = "irassian_chain"
+				set_country_flag = irassian_end1
 			}
 			if = {
 				limit = { has_event_chain = irassian_homeworld_chain }
-				end_event_chain = irassian_homeworld_chain
+				set_country_flag = irassian_end2
 			}
 		}
 	}
 	
 	option = {
 		name = "FASCINATING"
+		trigger = {
+			owner = {
+				has_country_flag = irassian_end1
+			}
+		}
 		owner = {
 			add_monthly_resource_mult = {
 				resource = physics_research
@@ -3614,26 +3748,51 @@ ship_event = {
 				min = @tier4materialmin
 				max = @tier4materialmax
 			}
+			end_event_chain = "irassian_chain"
+		}
+	}
+	
+	option = {
+		name = "FASCINATING"
+		trigger = {
+			owner = {
+				has_country_flag = irassian_end2
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = @tier4materialreward
+				min = @tier4materialmin
+				max = @tier4materialmax
+			}
+			end_event_chain = irassian_homeworld_chain
 		}
 	}
 }
 
-# Someone else got there first
+# Someone else got there first Will only show up for those without the quest
 ship_event = {
 	id = precursor.1602
 	title = "precursor.1602.name"
 	
-	desc = {
-		text = precursor.1602.desc.a
-		trigger = {
-			owner = {
-				OR = { 
-					has_event_chain = irassian_chain
-					has_event_chain = irassian_homeworld_chain
-				}
-			}
-		}
-	}
+#	desc = { Not used anymore
+#		text = precursor.1602.desc.a
+#		trigger = {
+#			owner = {
+#				OR = { 
+#					has_event_chain = irassian_chain
+#					has_event_chain = irassian_homeworld_chain
+#				}
+#			}
+#		}
+#	}
 	desc = {
 		text = precursor.1602.desc.b
 		trigger = {
@@ -3652,21 +3811,27 @@ ship_event = {
 	
 	trigger = {
 		from = { has_planet_flag = irassian_homeworld }
-		owner = { is_ai = no }
-		has_global_flag = irassian_homeworld_found
+		owner = { 
+			is_ai = no 
+			NOT = {
+				has_event_chain = irassian_chain
+				has_event_chain = irassian_homeworld_chain
+			}
+		}
+#		has_global_flag = irassian_homeworld_found
 	}
 	
 	immediate = {
 		owner = {
 			set_country_flag = irassian_world_found
-			if = {
-				limit = { has_event_chain = irassian_chain }
-				end_event_chain = "irassian_chain"
-			}
-			if = {
-				limit = { has_event_chain = irassian_homeworld_chain }
-				end_event_chain = "irassian_homeworld_chain"
-			}
+#			if = {
+#				limit = { has_event_chain = irassian_chain }
+#				end_event_chain = "irassian_chain"
+#			}
+#			if = {
+#				limit = { has_event_chain = irassian_homeworld_chain }
+#				end_event_chain = "irassian_homeworld_chain"
+#			}
 		}
 	}		
 	
@@ -4464,14 +4629,19 @@ ship_event = {
 	
 	trigger = {
 		from = { has_planet_flag = cybrex_homeworld }
-		owner = { is_ai = no }
-		NOT = {
-			has_global_flag = cybrex_homeworld_found
+#		NOT = {
+#			has_global_flag = cybrex_homeworld_found
+#		}
+		owner = {
+			OR = {
+				has_event_chain = cybrex_chain
+				has_event_chain = cybrex_homeworld_chain
+			}
 		}
 	}
 
 	immediate = {
-		set_global_flag = cybrex_homeworld_found
+#		set_global_flag = cybrex_homeworld_found
 		owner = {
 			set_country_flag = cybrex_world_found
 			if = {
@@ -4533,49 +4703,49 @@ ship_event = {
 		}
 	}
 
-	option = {
-		name = "FASCINATING"
-		trigger = {
-			owner = {
-				NOT = {
-					has_country_flag = cybrex_end1
-					has_country_flag = cybrex_end2
-				}
-			}
-		}
-		owner = {
-			add_monthly_resource_mult = {
-				resource = engineering_research
-				value = @tier4researchreward
-				min = @tier4researchmin
-				max = @tier4researchmax
-			}
-			add_monthly_resource_mult = {
-				resource = energy
-				value = @tier4materialreward
-				min = @tier4materialmin
-				max = @tier4materialmax
-			}
-		}
-	}
+#	option = {
+#		name = "FASCINATING"
+#		trigger = {
+#			owner = {
+#				NOT = {
+#					has_country_flag = cybrex_end1
+#					has_country_flag = cybrex_end2
+#				}
+#			}
+#		}
+#		owner = {
+#			add_monthly_resource_mult = {
+#				resource = engineering_research
+#				value = @tier4researchreward
+#				min = @tier4researchmin
+#				max = @tier4researchmax
+#			}
+#			add_monthly_resource_mult = {
+#				resource = energy
+#				value = @tier4materialreward
+#				min = @tier4materialmin
+#				max = @tier4materialmax
+#			}
+#		}
+#	}
 }
 
-# Someone else got there first
+# Someone else got there first Will only show up for those without the quest
 ship_event = {
 	id = precursor.2102
 	title = "precursor.2102.name"
 	
-	desc = {
-		text = precursor.2102.desc.a
-		trigger = {
-			owner = {
-				OR = { 
-					has_event_chain = cybrex_chain
-					has_event_chain = cybrex_homeworld_chain
-				}
-			}
-		}
-	}
+#	desc = { Not used anymore
+#		text = precursor.2102.desc.a
+#		trigger = {
+#			owner = {
+#				OR = { 
+#					has_event_chain = cybrex_chain
+#					has_event_chain = cybrex_homeworld_chain
+#				}
+#			}
+#		}
+#	}
 	desc = {
 		text = precursor.2102.desc.b
 		trigger = {
@@ -4593,22 +4763,28 @@ ship_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		has_global_flag = cybrex_homeworld_found
+#		has_global_flag = cybrex_homeworld_found
 		from = { solar_system = { has_star_flag = cybrex } }
-		owner = { is_ai = no }
+		owner = { 
+			is_ai = no 
+			NOT = {
+				has_event_chain = cybrex_chain
+				has_event_chain = cybrex_homeworld_chain
+			}
+		}
 	}
 	
 	immediate = {
 		owner = {
 			set_country_flag = cybrex_world_found
-			if = {
-				limit = { has_event_chain = cybrex_chain }
-				end_event_chain = "cybrex_chain"
-			}
-			if = {
-				limit = { has_event_chain = cybrex_homeworld_chain }
-				end_event_chain = "cybrex_homeworld_chain"
-			}
+#			if = {
+#				limit = { has_event_chain = cybrex_chain }
+#				end_event_chain = "cybrex_chain"
+#			}
+#			if = {
+#				limit = { has_event_chain = cybrex_homeworld_chain }
+#				end_event_chain = "cybrex_homeworld_chain"
+#			}
 		}
 	}		
 	
