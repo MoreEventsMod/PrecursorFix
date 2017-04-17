@@ -2803,7 +2803,7 @@ ship_event = {
 		name = "FASCINATING"
 		trigger = {
 			owner = {
-				has_country_flag = first_league_end2
+				has_country_flag = first_league_end1
 			}
 		}
 		owner = {
