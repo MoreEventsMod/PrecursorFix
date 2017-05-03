@@ -888,6 +888,12 @@ ship_event = {
 		}
 		owner = {
 			add_monthly_resource_mult = {
+				resource = unity
+				value = 120
+				min = 240
+				max = 9999
+			}
+			add_monthly_resource_mult = {
 				resource = physics_research
 				value = @tier3researchreward
 				min = @tier3researchmin
@@ -917,6 +923,12 @@ ship_event = {
 			}
 		}
 		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 120
+				min = 240
+				max = 9999
+			}
 			add_monthly_resource_mult = {
 				resource = physics_research
 				value = @tier3researchreward
@@ -1710,6 +1722,12 @@ ship_event = {
 		}
 		owner = {
 			add_monthly_resource_mult = {
+				resource = unity
+				value = 120
+				min = 240
+				max = 9999
+			}
+			add_monthly_resource_mult = {
 				resource = energy
 				value = @tier4materialreward
 				min = @tier4materialmin
@@ -1733,6 +1751,12 @@ ship_event = {
 			}
 		}
 		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 120
+				min = 240
+				max = 9999
+			}
 			add_monthly_resource_mult = {
 				resource = energy
 				value = @tier4materialreward
@@ -2808,6 +2832,12 @@ ship_event = {
 		}
 		owner = {
 			add_monthly_resource_mult = {
+				resource = unity
+				value = 120
+				min = 240
+				max = 9999
+			}
+			add_monthly_resource_mult = {
 				resource = society_research
 				value = @tier4researchreward
 				min = @tier4researchmin
@@ -2831,6 +2861,12 @@ ship_event = {
 			}
 		}
 		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 120
+				min = 240
+				max = 9999
+			}
 			add_monthly_resource_mult = {
 				resource = society_research
 				value = @tier4researchreward
@@ -3737,6 +3773,12 @@ ship_event = {
 		}
 		owner = {
 			add_monthly_resource_mult = {
+				resource = unity
+				value = 120
+				min = 240
+				max = 9999
+			}
+			add_monthly_resource_mult = {
 				resource = physics_research
 				value = @tier4researchreward
 				min = @tier4researchmin
@@ -3760,6 +3802,12 @@ ship_event = {
 			}
 		}
 		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 120
+				min = 240
+				max = 9999
+			}
 			add_monthly_resource_mult = {
 				resource = physics_research
 				value = @tier4researchreward
@@ -4664,6 +4712,12 @@ ship_event = {
 		}
 		owner = {
 			add_monthly_resource_mult = {
+				resource = unity
+				value = 120
+				min = 240
+				max = 9999
+			}
+			add_monthly_resource_mult = {
 				resource = engineering_research
 				value = @tier4researchreward
 				min = @tier4researchmin
@@ -4687,6 +4741,12 @@ ship_event = {
 			}
 		}
 		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 120
+				min = 240
+				max = 9999
+			}
 			add_monthly_resource_mult = {
 				resource = engineering_research
 				value = @tier4researchreward
