@@ -4853,309 +4853,346 @@ ship_event = {
 	}
 }
 
-# You study a Ringworld for the first time, and it spawns resources if none are present 
-ship_event = {
-	id = precursor.2200
-	title = "precursor.2200.name"
-	desc = precursor.2200.desc
-	picture = GFX_evt_ringworld
-	show_sound = event_mystic_reveal
-
-	is_triggered_only = yes
-	
-	trigger = {
-		owner = {
-			NOT = { has_country_flag = living_metal_studied }
-		}
-		from = {
-			OR = {
-				is_planet_class = pc_ringworld_tech
-				is_planet_class = pc_ringworld_tech_damaged
-				is_planet_class = pc_ringworld_seam
-				is_planet_class = pc_ringworld_seam_damaged
-				is_planet_class = pc_ringworld_habitable
-				is_planet_class = pc_ringworld_habitable_damaged
-			}
-		}
-	}
-	
-	immediate = {
-		leader = { save_event_target_as = RogueLeader }
-		solar_system = {
-			random_list = {
-				33 = { set_variable = { which = depositPlacedVar value = 3 } }
-				34 = { set_variable = { which = depositPlacedVar value = 4 } }
-				33 = { set_variable = { which = depositPlacedVar value = 5 } }
-			}
-			if = {
-				limit = { NOT = { has_star_flag = ringworld_deposited } }
-				from = { #First deposit
-					orbital_deposit_tile = {
-						clear_deposits = yes
-						add_deposit = d_living_metal_deposit
-					}
-					set_planet_flag = ringworld_section_deposit
-				}
-				set_star_flag = ringworld_deposited
-				random_system_planet = { #Second deposit
-					limit = {
-						OR = {
-							is_planet_class = pc_ringworld_tech
-							is_planet_class = pc_ringworld_tech_damaged
-							is_planet_class = pc_ringworld_seam
-							is_planet_class = pc_ringworld_seam_damaged
-							is_planet_class = pc_ringworld_habitable
-							is_planet_class = pc_ringworld_habitable_damaged
-						}
-						NOT = { has_planet_flag = ringworld_section_deposit }
-					}
-					orbital_deposit_tile = {
-						clear_deposits = yes
-						add_deposit = d_living_metal_deposit
-					}
-					set_planet_flag = ringworld_section_deposit
-				}
-				if = {
-					limit = {
-						OR = {
-							check_variable = { which = depositPlacedVar value = 3 }
-							check_variable = { which = depositPlacedVar value > 3 }
-						}
-					}
-					random_system_planet = { #Third deposit
-						limit = {
-							OR = {
-								is_planet_class = pc_ringworld_tech
-								is_planet_class = pc_ringworld_tech_damaged
-								is_planet_class = pc_ringworld_seam
-								is_planet_class = pc_ringworld_seam_damaged
-								is_planet_class = pc_ringworld_habitable
-								is_planet_class = pc_ringworld_habitable_damaged
-							}
-							NOT = { has_planet_flag = ringworld_section_deposit }
-						}
-						orbital_deposit_tile = {
-							clear_deposits = yes
-							add_deposit = d_living_metal_deposit
-						}
-						set_planet_flag = ringworld_section_deposit
-					}
-				}
-				if = {
-					limit = {
-						OR = {
-							check_variable = { which = depositPlacedVar value = 4 }
-							check_variable = { which = depositPlacedVar value = 5 }
-						}
-					}
-					random_system_planet = { #Fourth deposit
-						limit = {
-							OR = {
-								is_planet_class = pc_ringworld_tech
-								is_planet_class = pc_ringworld_tech_damaged
-								is_planet_class = pc_ringworld_seam
-								is_planet_class = pc_ringworld_seam_damaged
-								is_planet_class = pc_ringworld_habitable
-								is_planet_class = pc_ringworld_habitable_damaged
-								is_planet_class = pc_ringworld_habitable_damaged
-							}
-							NOT = { has_planet_flag = ringworld_section_deposit }
-						}
-						orbital_deposit_tile = {
-							clear_deposits = yes
-							add_deposit = d_living_metal_deposit
-						}
-						set_planet_flag = ringworld_section_deposit
-					}
-				}
-				if = {
-					limit = {
-						check_variable = { which = depositPlacedVar value = 5 }
-					}
-					random_system_planet = { #Fifth deposit
-						limit = {
-							OR = {
-								is_planet_class = pc_ringworld_tech
-								is_planet_class = pc_ringworld_tech_damaged
-								is_planet_class = pc_ringworld_seam
-								is_planet_class = pc_ringworld_seam_damaged
-								is_planet_class = pc_ringworld_habitable
-								is_planet_class = pc_ringworld_habitable_damaged
-							}
-							NOT = { has_planet_flag = ringworld_section_deposit }
-						}
-						orbital_deposit_tile = {
-							clear_deposits = yes
-							add_deposit = d_living_metal_deposit
-						}
-						set_planet_flag = ringworld_section_deposit
-					}
-				}
-			}
-		}
-	}
-	
-	option = {
-		name = AMAZING
-		owner = {
-			hidden_effect = {
-				set_country_flag = living_metal_studied
-			}
-			if = {
-				limit = {
-					has_tech_option = tech_mine_living_metal
-				}
-				add_tech_progress = {
-					tech = tech_mine_living_metal
-					progress = 0.25
-				}
-				else = {
-					add_research_option = tech_mine_living_metal
-				}
-			}
-		}
-	}
-}
-# You study another Ringworld that has no resources yet and we secretly spawn some  
-ship_event = {
-	id = precursor.2201
-	hide_window = yes	
-	is_triggered_only = yes
-	
-	trigger = {
-		owner = {
-			has_country_flag = living_metal_studied
-		}
-		from = {
-			OR = {
-				is_planet_class = pc_ringworld_tech
-				is_planet_class = pc_ringworld_tech_damaged
-				is_planet_class = pc_ringworld_seam
-				is_planet_class = pc_ringworld_seam_damaged
-				is_planet_class = pc_ringworld_habitable
-				is_planet_class = pc_ringworld_habitable_damaged
-			}
-		}
-		solar_system = {
-			NOT = { has_star_flag = ringworld_deposited }
-		}
-	}
-	
-	immediate = {
-		solar_system = {
-			random_list = {
-				33 = { set_variable = { which = depositPlacedVar value = 3 } }
-				34 = { set_variable = { which = depositPlacedVar value = 4 } }
-				33 = { set_variable = { which = depositPlacedVar value = 5 } }
-			}
-			if = {
-				limit = { NOT = { has_star_flag = ringworld_deposited } }
-				from = { #First deposit
-					orbital_deposit_tile = {
-						clear_deposits = yes
-						add_deposit = d_living_metal_deposit
-					}
-					set_planet_flag = ringworld_section_deposit
-				}
-				set_star_flag = ringworld_deposited
-				random_system_planet = { #Second deposit
-					limit = {
-						OR = {
-							is_planet_class = pc_ringworld_tech
-							is_planet_class = pc_ringworld_tech_damaged
-							is_planet_class = pc_ringworld_seam
-							is_planet_class = pc_ringworld_seam_damaged
-							is_planet_class = pc_ringworld_habitable
-							is_planet_class = pc_ringworld_habitable_damaged
-						}
-						NOT = { has_planet_flag = ringworld_section_deposit }
-					}
-					orbital_deposit_tile = {
-						clear_deposits = yes
-						add_deposit = d_living_metal_deposit
-					}
-					set_planet_flag = ringworld_section_deposit
-				}
-				if = {
-					limit = {
-						OR = {
-							check_variable = { which = depositPlacedVar value = 3 }
-							check_variable = { which = depositPlacedVar value > 3 }
-						}
-					}
-					random_system_planet = { #Third deposit
-						limit = {
-							OR = {
-								is_planet_class = pc_ringworld_tech
-								is_planet_class = pc_ringworld_tech_damaged
-								is_planet_class = pc_ringworld_seam
-								is_planet_class = pc_ringworld_seam_damaged
-								is_planet_class = pc_ringworld_habitable
-								is_planet_class = pc_ringworld_habitable_damaged
-							}
-							NOT = { has_planet_flag = ringworld_section_deposit }
-						}
-						orbital_deposit_tile = {
-							clear_deposits = yes
-							add_deposit = d_living_metal_deposit
-						}
-						set_planet_flag = ringworld_section_deposit
-					}
-				}
-				if = {
-					limit = {
-						OR = {
-							check_variable = { which = depositPlacedVar value = 4 }
-							check_variable = { which = depositPlacedVar value = 5 }
-						}
-					}
-					random_system_planet = { #Fourth deposit
-						limit = {
-							OR = {
-								is_planet_class = pc_ringworld_tech
-								is_planet_class = pc_ringworld_tech_damaged
-								is_planet_class = pc_ringworld_seam
-								is_planet_class = pc_ringworld_seam_damaged
-								is_planet_class = pc_ringworld_habitable
-								is_planet_class = pc_ringworld_habitable_damaged
-								is_planet_class = pc_ringworld_habitable_damaged
-							}
-							NOT = { has_planet_flag = ringworld_section_deposit }
-						}
-						orbital_deposit_tile = {
-							clear_deposits = yes
-							add_deposit = d_living_metal_deposit
-						}
-						set_planet_flag = ringworld_section_deposit
-					}
-				}
-				if = {
-					limit = {
-						check_variable = { which = depositPlacedVar value = 5 }
-					}
-					random_system_planet = { #Fifth deposit
-						limit = {
-							OR = {
-								is_planet_class = pc_ringworld_tech
-								is_planet_class = pc_ringworld_tech_damaged
-								is_planet_class = pc_ringworld_seam
-								is_planet_class = pc_ringworld_seam_damaged
-								is_planet_class = pc_ringworld_habitable
-								is_planet_class = pc_ringworld_habitable_damaged
-							}
-							NOT = { has_planet_flag = ringworld_section_deposit }
-						}
-						orbital_deposit_tile = {
-							clear_deposits = yes
-							add_deposit = d_living_metal_deposit
-						}
-						set_planet_flag = ringworld_section_deposit
-					}
-				}
-			}
-		}
-	}
-}
+## You study a Ringworld for the first time, and it spawns resources if none are present 
+#ship_event = {
+#	id = precursor.2200
+#	title = "precursor.2200.name"
+#
+#	desc = {
+#		text = precursor.2200.desc
+#		trigger = {
+#			any_owned_megastructure = {
+#				NOT = {
+#					OR = {
+#						is_megastructure_type = ring_world_1
+#						is_megastructure_type = ring_world_2
+#					}
+#				}
+#			}
+#			NOT = { has_country_flag = finished_ringworld }
+#		}
+#	}
+#	desc = {
+#		text = precursor.2200.desc.b
+#		trigger = {
+#			OR = {
+#				any_owned_megastructure = {
+#					OR = {
+#						is_megastructure_type = ring_world_1
+#						is_megastructure_type = ring_world_2
+#					}
+#				}
+#				has_country_flag = finished_ringworld
+#			}
+#		}
+#	}
+#	
+#	picture = GFX_evt_ringworld
+#	show_sound = event_mystic_reveal
+#
+#	is_triggered_only = yes
+#	
+#	trigger = {
+#		owner = {
+#			NOT = { has_country_flag = living_metal_studied }
+#			is_ai = no
+#		}
+#		from = {
+#			OR = {
+#				is_planet_class = pc_ringworld_tech
+#				is_planet_class = pc_ringworld_tech_damaged
+#				is_planet_class = pc_ringworld_seam
+#				is_planet_class = pc_ringworld_seam_damaged
+#				is_planet_class = pc_ringworld_habitable
+#				is_planet_class = pc_ringworld_habitable_damaged
+#			}
+#			solar_system = {
+#				NOT = { has_star_flag = ring_world_built }
+#			}
+#		}
+#	}
+#	
+#	immediate = {
+#		leader = { save_event_target_as = RogueLeader }
+#		solar_system = {
+#			random_list = {
+#				33 = { set_variable = { which = depositPlacedVar value = 3 } }
+#				34 = { set_variable = { which = depositPlacedVar value = 4 } }
+#				33 = { set_variable = { which = depositPlacedVar value = 5 } }
+#			}
+#			if = {
+#				limit = { NOT = { has_star_flag = ringworld_deposited } }
+#				from = { #First deposit
+#					orbital_deposit_tile = {
+#						clear_deposits = yes
+#						add_deposit = d_living_metal_deposit
+#					}
+#					set_planet_flag = ringworld_section_deposit
+#				}
+#				set_star_flag = ringworld_deposited
+#				random_system_planet = { #Second deposit
+#					limit = {
+#						OR = {
+#							is_planet_class = pc_ringworld_tech
+#							is_planet_class = pc_ringworld_tech_damaged
+#							is_planet_class = pc_ringworld_seam
+#							is_planet_class = pc_ringworld_seam_damaged
+#							is_planet_class = pc_ringworld_habitable
+#							is_planet_class = pc_ringworld_habitable_damaged
+#						}
+#						NOT = { has_planet_flag = ringworld_section_deposit }
+#					}
+#					orbital_deposit_tile = {
+#						clear_deposits = yes
+#						add_deposit = d_living_metal_deposit
+#					}
+#					set_planet_flag = ringworld_section_deposit
+#				}
+#				if = {
+#					limit = {
+#						OR = {
+#							check_variable = { which = depositPlacedVar value = 3 }
+#							check_variable = { which = depositPlacedVar value > 3 }
+#						}
+#					}
+#					random_system_planet = { #Third deposit
+#						limit = {
+#							OR = {
+#								is_planet_class = pc_ringworld_tech
+#								is_planet_class = pc_ringworld_tech_damaged
+#								is_planet_class = pc_ringworld_seam
+#								is_planet_class = pc_ringworld_seam_damaged
+#								is_planet_class = pc_ringworld_habitable
+#								is_planet_class = pc_ringworld_habitable_damaged
+#							}
+#							NOT = { has_planet_flag = ringworld_section_deposit }
+#						}
+#						orbital_deposit_tile = {
+#							clear_deposits = yes
+#							add_deposit = d_living_metal_deposit
+#						}
+#						set_planet_flag = ringworld_section_deposit
+#					}
+#				}
+#				if = {
+#					limit = {
+#						OR = {
+#							check_variable = { which = depositPlacedVar value = 4 }
+#							check_variable = { which = depositPlacedVar value = 5 }
+#						}
+#					}
+#					random_system_planet = { #Fourth deposit
+#						limit = {
+#							OR = {
+#								is_planet_class = pc_ringworld_tech
+#								is_planet_class = pc_ringworld_tech_damaged
+#								is_planet_class = pc_ringworld_seam
+#								is_planet_class = pc_ringworld_seam_damaged
+#								is_planet_class = pc_ringworld_habitable
+#								is_planet_class = pc_ringworld_habitable_damaged
+#								is_planet_class = pc_ringworld_habitable_damaged
+#							}
+#							NOT = { has_planet_flag = ringworld_section_deposit }
+#						}
+#						orbital_deposit_tile = {
+#							clear_deposits = yes
+#							add_deposit = d_living_metal_deposit
+#						}
+#						set_planet_flag = ringworld_section_deposit
+#					}
+#				}
+#				if = {
+#					limit = {
+#						check_variable = { which = depositPlacedVar value = 5 }
+#					}
+#					random_system_planet = { #Fifth deposit
+#						limit = {
+#							OR = {
+#								is_planet_class = pc_ringworld_tech
+#								is_planet_class = pc_ringworld_tech_damaged
+#								is_planet_class = pc_ringworld_seam
+#								is_planet_class = pc_ringworld_seam_damaged
+#								is_planet_class = pc_ringworld_habitable
+#								is_planet_class = pc_ringworld_habitable_damaged
+#							}
+#							NOT = { has_planet_flag = ringworld_section_deposit }
+#						}
+#						orbital_deposit_tile = {
+#							clear_deposits = yes
+#							add_deposit = d_living_metal_deposit
+#						}
+#						set_planet_flag = ringworld_section_deposit
+#					}
+#				}
+#			}
+#		}
+#	}
+#	
+#	option = {
+#		name = AMAZING
+#		owner = {
+#			hidden_effect = {
+#				set_country_flag = living_metal_studied
+#			}
+#			if = {
+#				limit = {
+#					has_tech_option = tech_mine_living_metal
+#				}
+#				add_tech_progress = {
+#					tech = tech_mine_living_metal
+#					progress = 0.25
+#				}
+#				else = {
+#					add_research_option = tech_mine_living_metal
+#				}
+#			}
+#		}
+#	}
+#}
+## You study another Ringworld that has no resources yet and we secretly spawn some  
+#ship_event = {
+#	id = precursor.2201
+#	hide_window = yes	
+#	is_triggered_only = yes
+#	
+#	trigger = {
+#		owner = {
+#			has_country_flag = living_metal_studied
+#			is_ai = no
+#		}
+#		from = {
+#			OR = {
+#				is_planet_class = pc_ringworld_tech
+#				is_planet_class = pc_ringworld_tech_damaged
+#				is_planet_class = pc_ringworld_seam
+#				is_planet_class = pc_ringworld_seam_damaged
+#				is_planet_class = pc_ringworld_habitable
+#				is_planet_class = pc_ringworld_habitable_damaged
+#			}
+#		}
+#		solar_system = {
+#			NOT = { 
+#				has_star_flag = ringworld_deposited 
+#				has_star_flag = ring_world_built
+#			}
+#		}
+#	}
+#	
+#	immediate = {
+#		solar_system = {
+#			random_list = {
+#				33 = { set_variable = { which = depositPlacedVar value = 3 } }
+#				34 = { set_variable = { which = depositPlacedVar value = 4 } }
+#				33 = { set_variable = { which = depositPlacedVar value = 5 } }
+#			}
+#			if = {
+#				limit = { NOT = { has_star_flag = ringworld_deposited } }
+#				from = { #First deposit
+#					orbital_deposit_tile = {
+#						clear_deposits = yes
+#						add_deposit = d_living_metal_deposit
+#					}
+#					set_planet_flag = ringworld_section_deposit
+#				}
+#				set_star_flag = ringworld_deposited
+#				random_system_planet = { #Second deposit
+#					limit = {
+#						OR = {
+#							is_planet_class = pc_ringworld_tech
+#							is_planet_class = pc_ringworld_tech_damaged
+#							is_planet_class = pc_ringworld_seam
+#							is_planet_class = pc_ringworld_seam_damaged
+#							is_planet_class = pc_ringworld_habitable
+#							is_planet_class = pc_ringworld_habitable_damaged
+#						}
+#						NOT = { has_planet_flag = ringworld_section_deposit }
+#					}
+#					orbital_deposit_tile = {
+#						clear_deposits = yes
+#						add_deposit = d_living_metal_deposit
+#					}
+#					set_planet_flag = ringworld_section_deposit
+#				}
+#				if = {
+#					limit = {
+#						OR = {
+#							check_variable = { which = depositPlacedVar value = 3 }
+#							check_variable = { which = depositPlacedVar value > 3 }
+#						}
+#					}
+#					random_system_planet = { #Third deposit
+#						limit = {
+#							OR = {
+#								is_planet_class = pc_ringworld_tech
+#								is_planet_class = pc_ringworld_tech_damaged
+#								is_planet_class = pc_ringworld_seam
+#								is_planet_class = pc_ringworld_seam_damaged
+#								is_planet_class = pc_ringworld_habitable
+#								is_planet_class = pc_ringworld_habitable_damaged
+#							}
+#							NOT = { has_planet_flag = ringworld_section_deposit }
+#						}
+#						orbital_deposit_tile = {
+#							clear_deposits = yes
+#							add_deposit = d_living_metal_deposit
+#						}
+#						set_planet_flag = ringworld_section_deposit
+#					}
+#				}
+#				if = {
+#					limit = {
+#						OR = {
+#							check_variable = { which = depositPlacedVar value = 4 }
+#							check_variable = { which = depositPlacedVar value = 5 }
+#						}
+#					}
+#					random_system_planet = { #Fourth deposit
+#						limit = {
+#							OR = {
+#								is_planet_class = pc_ringworld_tech
+#								is_planet_class = pc_ringworld_tech_damaged
+#								is_planet_class = pc_ringworld_seam
+#								is_planet_class = pc_ringworld_seam_damaged
+#								is_planet_class = pc_ringworld_habitable
+#								is_planet_class = pc_ringworld_habitable_damaged
+#								is_planet_class = pc_ringworld_habitable_damaged
+#							}
+#							NOT = { has_planet_flag = ringworld_section_deposit }
+#						}
+#						orbital_deposit_tile = {
+#							clear_deposits = yes
+#							add_deposit = d_living_metal_deposit
+#						}
+#						set_planet_flag = ringworld_section_deposit
+#					}
+#				}
+#				if = {
+#					limit = {
+#						check_variable = { which = depositPlacedVar value = 5 }
+#					}
+#					random_system_planet = { #Fifth deposit
+#						limit = {
+#							OR = {
+#								is_planet_class = pc_ringworld_tech
+#								is_planet_class = pc_ringworld_tech_damaged
+#								is_planet_class = pc_ringworld_seam
+#								is_planet_class = pc_ringworld_seam_damaged
+#								is_planet_class = pc_ringworld_habitable
+#								is_planet_class = pc_ringworld_habitable_damaged
+#							}
+#							NOT = { has_planet_flag = ringworld_section_deposit }
+#						}
+#						orbital_deposit_tile = {
+#							clear_deposits = yes
+#							add_deposit = d_living_metal_deposit
+#						}
+#						set_planet_flag = ringworld_section_deposit
+#					}
+#				}
+#			}
+#		}
+#	}
+#}
 
 # New Precursor Anomaly Found
 #country_event = {
