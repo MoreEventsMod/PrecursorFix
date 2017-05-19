@@ -4676,7 +4676,7 @@ ship_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		from = { has_planet_flag = cybrex_homeworld }
+		from = { has_star_flag = cybrex }
 #		NOT = {
 #			has_global_flag = cybrex_homeworld_found
 #		}

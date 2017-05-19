@@ -7,6 +7,5 @@ on_survey = {
 		precursor.601
 		precursor.1101
 		precursor.1601
-		precursor.2101
 	}
 }
