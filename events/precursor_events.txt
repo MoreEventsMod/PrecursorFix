@@ -4824,12 +4824,17 @@ ship_event = {
 	
 	trigger = {
 #		has_global_flag = cybrex_homeworld_found
-		from = { solar_system = { has_star_flag = cybrex } }
+		from = { has_star_flag = cybrex }
 		owner = { 
 			is_ai = no 
-			NOT = {
+			NOR = {
 				has_event_chain = cybrex_chain
 				has_event_chain = cybrex_homeworld_chain
+			}
+		}
+		owner = {
+			NOT = {
+				has_country_flag = cybrex_world_found
 			}
 		}
 	}
