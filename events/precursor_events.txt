@@ -82,12 +82,13 @@ ship_event = {
 	
 	trigger = {
 		solar_system = { has_star_flag = precursor_1 }
+		solar_system = { NOT = { is_same_value = root.owner.capital_scope.solar_system } }
 		FROM = { 
 			has_anomaly = no 
 			is_star = no
 		}
 		owner = { 
-			is_ai = no
+#			is_ai = no
 			NOT = { 
 				has_country_flag = vultaum_intro
 				has_country_flag = yuht_intro
@@ -814,6 +815,7 @@ country_event = {
 	title = "precursor.100.name"
 	desc = "precursor.100.desc"
 	picture = GFX_evt_federation_fleet
+	location = event_target:vultaumar
 	
 	is_triggered_only = yes
 	
@@ -847,13 +849,14 @@ ship_event = {
 	title = "precursor.101.name"
 	desc = "precursor.101.desc"
 	picture = GFX_evt_archaeological_dig
+	location = from
 	
 	is_triggered_only = yes
 	
 	trigger = {
 		from = { has_planet_flag = vultaum_homeworld }
 		owner = { 
-			is_ai = no 
+#			is_ai = no 
 			OR = {
 				has_event_chain = vultaum_chain
 				has_event_chain = vultaum_homeworld_chain
@@ -979,6 +982,7 @@ ship_event = {
 			}
 		}
 	}
+	location = from
 	
 	picture = GFX_evt_archaeological_dig
 	
@@ -987,7 +991,7 @@ ship_event = {
 	trigger = {
 		from = { has_planet_flag = vultaum_homeworld }
 		owner = {
-			is_ai = no
+#			is_ai = no
 			NOT = {
 				has_event_chain = vultaum_chain
 				has_event_chain = vultaum_homeworld_chain
@@ -1023,17 +1027,19 @@ ship_event = {
 	title = "precursor.500.name"
 	desc = "precursor.500.desc"
 	picture = GFX_evt_archaeological_dig
+	location = from
 	
 	is_triggered_only = yes 
 	
 	trigger = {
 		solar_system = { has_star_flag = precursor_2 }
+		solar_system = { NOT = { is_same_value = root.owner.capital_scope.solar_system } }
 		FROM = { 
 			has_anomaly = no 
 			is_star = no
 		}
 		owner = {
-			is_ai = no
+#			is_ai = no
 			NOT = { 
 				has_country_flag = vultaum_intro
 				has_country_flag = yuht_intro
@@ -1648,6 +1654,7 @@ country_event = {
 	title = "precursor.600.name"
 	desc = "precursor.600.desc"
 	picture = GFX_evt_federation_fleet
+	location = event_target:yuhtaan
 	
 	is_triggered_only = yes
 	
@@ -1681,13 +1688,14 @@ ship_event = {
 	title = "precursor.601.name"
 	desc = "precursor.601.desc"
 	picture = GFX_evt_archaeological_dig
+	location = from
 	
 	is_triggered_only = yes
 	
 	trigger = {
 		from = { has_planet_flag = yuht_homeworld }
 		owner = { 
-			is_ai = no
+#			is_ai = no
 			OR = {
 				has_event_chain = yuht_chain
 				has_event_chain = yuht_homeworld_chain
@@ -1801,6 +1809,7 @@ ship_event = {
 			}
 		}
 	}
+	location = from
 	
 	picture = GFX_evt_archaeological_dig
 	
@@ -1809,7 +1818,7 @@ ship_event = {
 	trigger = {
 		from = { has_planet_flag = yuht_homeworld }
 		owner = { 
-			is_ai = no 
+#			is_ai = no 
 			NOT = {
 				has_event_chain = yuht_chain
 				has_event_chain = yuht_homeworld_chain
@@ -1850,12 +1859,13 @@ ship_event = {
 	
 	trigger = {
 		solar_system = { has_star_flag = precursor_3 }
+		solar_system = { NOT = { is_same_value = root.owner.capital_scope.solar_system } }
 		FROM = { 
 			has_anomaly = no 
 			is_star = no
 		}
 		owner = {
-			is_ai = no
+#			is_ai = no
 			NOT = { 
 				has_country_flag = vultaum_intro
 				has_country_flag = yuht_intro
@@ -2759,6 +2769,7 @@ country_event = {
 	title = "precursor.1100.name"
 	desc = "precursor.1100.desc"
 	picture = GFX_evt_federation_fleet
+	location = event_target:fen_habbanis
 	
 	is_triggered_only = yes
 	
@@ -2792,6 +2803,7 @@ ship_event = {
 	title = "precursor.1101.name"
 	desc = "precursor.1101.desc"
 	picture = GFX_evt_dead_city
+	location = from
 	
 	is_triggered_only = yes
 	
@@ -2911,6 +2923,7 @@ ship_event = {
 			}
 		}
 	}
+	location = from
 	
 	picture = GFX_evt_archaeological_dig
 	
@@ -2919,7 +2932,7 @@ ship_event = {
 	trigger = {
 		from = { has_planet_flag = first_league_homeworld }
 		owner = {
-			is_ai = no
+#			is_ai = no
 			NOT = {
 				has_event_chain = first_league_chain
 				has_event_chain = first_league_homeworld_chain
@@ -2960,12 +2973,13 @@ ship_event = {
 	
 	trigger = {
 		solar_system = { has_star_flag = precursor_4 }
+		solar_system = { NOT = { is_same_value = root.owner.capital_scope.solar_system } }
 		FROM = { 
 			has_anomaly = no 
 			is_star = no
 		}
 		owner = {
-			is_ai = no
+#			is_ai = no
 			NOT = { 
 				has_country_flag = vultaum_intro
 				has_country_flag = yuht_intro
@@ -3698,6 +3712,7 @@ country_event = {
 	title = "precursor.1600.name"
 	desc = "precursor.1600.desc"
 	picture = GFX_evt_federation_fleet
+	location = event_target:irass
 	
 	is_triggered_only = yes
 	
@@ -3733,6 +3748,7 @@ ship_event = {
 	title = "precursor.1601.name"
 	desc = "precursor.1601.desc"
 	picture = GFX_evt_dead_city
+	location = from
 	
 	is_triggered_only = yes
 	
@@ -3852,6 +3868,7 @@ ship_event = {
 			}
 		}
 	}
+	location = from
 	
 	picture = GFX_evt_archaeological_dig
 	
@@ -3860,7 +3877,7 @@ ship_event = {
 	trigger = {
 		from = { has_planet_flag = irassian_homeworld }
 		owner = { 
-			is_ai = no 
+#			is_ai = no 
 			NOT = {
 				has_event_chain = irassian_chain
 				has_event_chain = irassian_homeworld_chain
@@ -3901,12 +3918,13 @@ ship_event = {
 	
 	trigger = {
 		solar_system = { has_star_flag = precursor_5 }
+		solar_system = { NOT = { is_same_value = root.owner.capital_scope.solar_system } }
 		FROM = { 
 			has_anomaly = no 
 			is_star = no
 		}
 		owner = { 
-			is_ai = no
+#			is_ai = no
 			NOT = { 
 				has_country_flag = vultaum_intro
 				has_country_flag = yuht_intro
@@ -4639,6 +4657,7 @@ country_event = {
 	title = "precursor.2100.name"
 	desc = "precursor.2100.desc"
 	picture = GFX_evt_federation_fleet
+	location = event_target:cybrex
 	
 	is_triggered_only = yes
 	
@@ -4672,6 +4691,7 @@ ship_event = {
 	title = "precursor.2101.name"
 	desc = "precursor.2101.desc"
 	picture = GFX_evt_dead_city
+	location = from
 	
 	is_triggered_only = yes
 	
@@ -4817,6 +4837,7 @@ ship_event = {
 			}
 		}
 	}
+	location = from
 	
 	picture = GFX_evt_archaeological_dig
 	
@@ -4826,7 +4847,7 @@ ship_event = {
 #		has_global_flag = cybrex_homeworld_found
 		from = { has_star_flag = cybrex }
 		owner = { 
-			is_ai = no 
+#			is_ai = no 
 			NOR = {
 				has_event_chain = cybrex_chain
 				has_event_chain = cybrex_homeworld_chain

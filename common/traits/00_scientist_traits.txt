@@ -14,7 +14,7 @@
 # Balance #
 ###########
 #effects on research traits
-@categorybonus = 0.10
+@categorybonus = 0.15
 
 ####################
 # Scientist Traits #
@@ -107,6 +107,9 @@ leader_trait_roamer = {
 	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_roamer.dds"
 	modifier = {
 		science_ship_survey_speed = 0.25
+	}
+	leader_potential_add = {
+		NOT = { from = { has_authority = "auth_machine_intelligence" } }
 	}
 	leader_trait = yes
 	leader_class = { scientist }
@@ -253,8 +256,6 @@ leader_trait_archaeologist = {
 #			FEN_HABBANIS_research_fail_risk_add = -0.25
 #			IRASSIA_research_speed_mult = 0.5
 #			IRASSIA_research_fail_risk_add = -0.25
-#			CYBREX_research_speed_mult = 0.5
-#			CYBREX_research_fail_risk_add = -0.25
 		}
 	leader_trait = yes
 	leader_class = { scientist }
@@ -314,10 +315,13 @@ leader_trait_custom_AI_assistant = {
 		science_ship_survey_speed = 0.1
 		ship_anomaly_research_speed_mult = 0.15
 	}
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
 	leader_trait = yes
 	leader_class = { scientist }
 	prerequisites = { tech_self_aware_logic }
-	opposites = { "leader_trait_sentient_AI_assistant" }
+	opposites = { "leader_trait_sapient_AI_assistant" }
 	
 	ai_categories = {
 		survey
@@ -331,18 +335,23 @@ leader_trait_custom_AI_assistant = {
 	}
 }
 
-leader_trait_sentient_AI_assistant = {
+leader_trait_sapient_AI_assistant = {
 	cost = 1
 	modification = no
-	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_sentient_AI_assistant.dds"
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_sapient_AI_assistant.dds"
 	modifier = {
 		all_technology_research_speed = 0.1
 		science_ship_survey_speed = 0.2
 		ship_anomaly_research_speed_mult = 0.3
 	}
+	leader_potential_add = {
+		NOT = { from = { has_authority = "auth_hive_mind" } }
+		NOT = { from = { has_authority = "auth_machine_intelligence" } }
+		NOT = { from = { has_policy_flag = ai_outlawed } }
+	}
 	leader_trait = yes
 	leader_class = { scientist }
-	prerequisites = { tech_sentient_ai }
+	prerequisites = { tech_sapient_ai }
 	opposites = { "leader_trait_custom_AI_assistant" }
 	
 	ai_categories = {
@@ -786,9 +795,6 @@ leader_trait_scientist_cyborg = {
 	cost = 1
 	modification = no
 	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_cyborg.dds"
-	self_modifier = {
-		leader_age = 40
-	}
 	modifier = {
 		all_technology_research_speed = 0.05
 	}
@@ -814,8 +820,8 @@ leader_trait_scientist_synthetic = {
 	modification = no
 	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_synthetic.dds"
 	modifier = {
-		all_technology_research_speed = 0.10
-		science_ship_survey_speed = 0.25
+		all_technology_research_speed = 0.05
+		ship_anomaly_fail_risk = -0.10
 	}
 	leader_trait = yes
 	leader_class = { scientist }
@@ -866,7 +872,7 @@ leader_trait_scientist_chosen = {
 	immortal_leaders = yes
 	modifier = {
 		all_technology_research_speed = 0.20
-		science_ship_survey_speed = 0.3
+		science_ship_survey_speed = 0.50
 	}
 	leader_trait = yes
 	leader_class = { scientist }
@@ -878,6 +884,28 @@ leader_trait_scientist_chosen = {
 		physics
 		society
 		engineering
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+leader_trait_towel = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_scroll.dds"
+	modifier = {
+		science_ship_survey_speed = 0.25
+		ship_anomaly_fail_risk = -0.50
+	}
+	leader_trait = yes
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	
+	ai_categories = {
+		survey
 	}
 	
 	ai_weight = {

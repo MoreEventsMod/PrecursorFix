@@ -513,17 +513,17 @@ anomaly = {
 
 ### Cybrex Precursor Discoveries
 
-# Cybrex Introduction 1
-anomaly = {
-	event = precursor.2000
-	category = "cybrex_asteroid_category"
-	
-	weight = 500
-	
-	potential = {
-		always = yes
-	}
-}
+## Cybrex Introduction 1
+#anomaly = {
+#	event = precursor.2000
+#	category = "cybrex_asteroid_category"
+#	
+#	weight = 500
+#	
+#	potential = {
+#		always = yes
+#	}
+#}
 
 # Kuur Homeworld
 anomaly = {

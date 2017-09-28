@@ -30,6 +30,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_1 }
 			FROM = {
@@ -44,6 +45,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = vultaum_1 }
 		}
@@ -79,6 +81,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_1 }
 			FROM = {
@@ -93,6 +96,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = vultaum_2 }
 		}
@@ -128,6 +132,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_1 }
 			FROM = {
@@ -142,6 +147,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = vultaum_3 }
 		}
@@ -177,6 +183,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_1 }
 			FROM = {
@@ -191,6 +198,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = vultaum_4 }
 		}
@@ -226,6 +234,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_1 }
 			FROM = {
@@ -240,6 +249,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = vultaum_5 }
 		}
@@ -275,6 +285,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			is_planet_class = pc_gas_giant
 			solar_system = { has_star_flag = precursor_1 }
 			FROM = {
@@ -289,6 +300,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = vultaum_6 }
 		}
@@ -322,6 +334,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_1 }
 			FROM = {
@@ -336,6 +349,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = vultaum_7 }
 		}
@@ -371,6 +385,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_1 }
 			FROM = {
@@ -385,6 +400,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = vultaum_8 }
 		}
@@ -420,6 +436,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_1 }
 			FROM = {
@@ -434,6 +451,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = vultaum_9 }
 		}
@@ -469,6 +487,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_1 }
 			FROM = {
@@ -483,6 +502,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = vultaum_10 }
 		}
@@ -518,6 +538,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			is_asteroid = yes
 			solar_system = { has_star_flag = precursor_1 }
 			FROM = {
@@ -532,6 +553,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = vultaum_11 }
 		}
@@ -571,6 +593,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_2 }
 			FROM = {
@@ -585,6 +608,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = yuht_1 }
 		}
@@ -620,6 +644,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_2 }
 			FROM = {
@@ -634,6 +659,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = yuht_2 }
 		}
@@ -669,6 +695,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_2 }
 			FROM = {
@@ -683,6 +710,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = yuht_3 }
 		}
@@ -718,6 +746,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_2 }
 			FROM = {
@@ -732,6 +761,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = yuht_4 }
 		}
@@ -767,6 +797,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_2 }
 			FROM = {
@@ -781,6 +812,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = yuht_5 }
 		}
@@ -816,6 +848,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			is_planet_class = pc_gas_giant
 			solar_system = { has_star_flag = precursor_2 }
 			FROM = {
@@ -830,6 +863,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = yuht_6 }
 		}
@@ -863,6 +897,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_2 }
 			FROM = {
@@ -877,6 +912,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = yuht_7 }
 		}
@@ -912,6 +948,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_2 }
 			FROM = {
@@ -926,6 +963,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = yuht_8 }
 		}
@@ -961,6 +999,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			is_asteroid = yes
 			solar_system = { has_star_flag = precursor_2 }
 			FROM = {
@@ -975,6 +1014,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = yuht_9 }
 		}
@@ -1014,6 +1054,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1028,6 +1069,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_1 }
 		}
@@ -1063,6 +1105,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			is_planet_class = pc_gas_giant
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1077,6 +1120,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_2 }
 		}
@@ -1110,6 +1154,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1124,6 +1169,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_3 }
 		}
@@ -1159,6 +1205,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1173,6 +1220,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_4 }
 		}
@@ -1208,6 +1256,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1222,6 +1271,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_5 }
 		}
@@ -1257,6 +1307,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1271,6 +1322,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_6 }
 		}
@@ -1306,6 +1358,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1320,6 +1373,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_7 }
 		}
@@ -1355,6 +1409,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1369,6 +1424,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_8 }
 		}
@@ -1404,6 +1460,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1418,6 +1475,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_9 }
 		}
@@ -1453,6 +1511,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1467,6 +1526,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_10 }
 		}
@@ -1502,6 +1562,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1516,6 +1577,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_11 }
 		}
@@ -1551,6 +1613,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1565,6 +1628,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_12 }
 		}
@@ -1600,6 +1664,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1614,6 +1679,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_13 }
 		}
@@ -1649,6 +1715,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			is_asteroid = yes
 			solar_system = { has_star_flag = precursor_3 }
 			FROM = {
@@ -1663,6 +1730,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = first_league_14 }
 		}
@@ -1702,6 +1770,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_4 }
 			FROM = {
@@ -1716,6 +1785,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = irassians_1 }
 		}
@@ -1751,6 +1821,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_4 }
 			FROM = {
@@ -1765,6 +1836,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = irassians_2 }
 		}
@@ -1800,6 +1872,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_4 }
 			FROM = {
@@ -1814,6 +1887,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = irassians_3 }
 		}
@@ -1849,6 +1923,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_4 }
 			FROM = {
@@ -1863,6 +1938,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = irassians_4 }
 		}
@@ -1898,6 +1974,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_4 }
 			FROM = {
@@ -1912,6 +1989,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = irassians_5 }
 		}
@@ -1947,6 +2025,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_4 }
 			FROM = {
@@ -1961,6 +2040,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = irassians_6 }
 		}
@@ -1996,6 +2076,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_4 }
 			FROM = {
@@ -2010,6 +2091,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = irassians_7 }
 		}
@@ -2045,6 +2127,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_4 }
 			FROM = {
@@ -2059,6 +2142,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = irassians_8 }
 		}
@@ -2094,6 +2178,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_4 }
 			FROM = {
@@ -2108,6 +2193,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = irassians_9 }
 		}
@@ -2143,6 +2229,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			is_asteroid = yes
 			solar_system = { has_star_flag = precursor_4 }
 			FROM = {
@@ -2157,6 +2244,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = irassians_10 }
 		}
@@ -2192,6 +2280,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			is_planet_class = pc_gas_giant
 			solar_system = { has_star_flag = precursor_4 }
 			FROM = {
@@ -2206,6 +2295,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = irassians_11 }
 		}
@@ -2243,6 +2333,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_5 }
 			FROM = {
@@ -2257,6 +2348,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = cybrex_1 }
 		}
@@ -2292,6 +2384,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_5 }
 			FROM = {
@@ -2306,6 +2399,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = cybrex_2 }
 		}
@@ -2341,6 +2435,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_5 }
 			FROM = {
@@ -2355,6 +2450,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = cybrex_3 }
 		}
@@ -2390,6 +2486,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_5 }
 			FROM = {
@@ -2404,6 +2501,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = cybrex_4 }
 		}
@@ -2439,6 +2537,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			habitable_planet = yes
 			solar_system = { has_star_flag = precursor_5 }
 			FROM = {
@@ -2453,6 +2552,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = cybrex_5 }
 		}
@@ -2488,6 +2588,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			is_asteroid = yes
 			solar_system = { has_star_flag = precursor_5 }
 			FROM = {
@@ -2502,6 +2603,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = cybrex_6 }
 		}
@@ -2537,6 +2639,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			is_planet_class = pc_gas_giant
 			solar_system = { has_star_flag = precursor_5 }
 			FROM = {
@@ -2551,6 +2654,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = cybrex_7 }
 		}
@@ -2584,6 +2688,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_5 }
 			FROM = {
@@ -2598,6 +2703,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = cybrex_8 }
 		}
@@ -2633,6 +2739,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_5 }
 			FROM = {
@@ -2647,6 +2754,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = cybrex_9 }
 		}
@@ -2682,6 +2790,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_5 }
 			FROM = {
@@ -2696,6 +2805,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = cybrex_10 }
 		}
@@ -2731,6 +2841,7 @@ anomaly_category = {
 	spawn_chance = {		
 		modifier = {
 			add = 10
+			NOT = { has_planet_flag = precursor_world }
 			uninhabitable_regular_planet = yes
 			solar_system = { has_star_flag = precursor_5 }
 			FROM = {
@@ -2745,6 +2856,7 @@ anomaly_category = {
 	}
 	
 	on_spawn = {
+		set_planet_flag = precursor_world
 		FROM = {
 			owner = { set_country_flag = cybrex_11 }
 		}
@@ -2812,18 +2924,6 @@ anomaly_category = {
 anomaly_category = {
 	key = "IRASSIA"
 	desc = "IRASSIA_DESC"
-	
-	spawn_chance = {		
-		modifier = {
-			add = 0
-		}
-	}
-	
-}
-
-anomaly_category = {
-	key = "CYBREX"
-	desc = "CYBREX_DESC"
 	
 	spawn_chance = {		
 		modifier = {
